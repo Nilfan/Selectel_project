@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 well well-sm" style="border-color: deepskyblue; background-color: lightblue; border-radius: 5px">
+            <div class="row">
+                <div class="col-sm-7">
+                    <br>
+                    <div class="input-group">
+                        <input ng-model="ctrl.currCity" type="text" class="input-mini form-control" 
+                            placeholder="Enter city" list="cities" 
+                            value="{{ctrl.currCity}}" style="border-top-left-radius:15px; border-bottom-left-radius:15px;
+                            border-bottom-color: deepskyblue; border-top-color :deepskyblue;
+                            border-left-color: deepskyblue">
+                            
+                        <datalist id="cities">
+                            <option ng-repeat="city in ctrl.cities" value="{{city.name}}">
+                                {{city.name}}
+                            </option>
+                        </datalist>
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary"  ng-click="ctrl.getTemperature()" style="border-top-right-radius:15px; border-bottom-right-radius:15px;
+                    border-bottom-color: deepskyblue; border-top-color :deepskyblue;
+                    border-right-color: deepskyblue"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+                            </span>
+                    </div> 
+                <br>
+                <div class="input-group" ng-model="ctrl.tempr">
+                    <span class="input-group-addon" id="basic-addon1" style="border-top-left-radius:15px; border-bottom-left-radius:15px;
+                    border-bottom-color: deepskyblue; border-top-color :deepskyblue;
+                    border-left-color: deepskyblue"><i class="fa fa-thermometer-three-quarters"></i></span>
+                    <input type="text" class="form-control input-mini span1" style="border-top-right-radius:15px; border-bottom-right-radius:15px;
+                    border-bottom-color: deepskyblue; border-top-color :deepskyblue;
+                    border-right-color: deepskyblue"  placeholder="" aria-describedby="basic-addon1" value="{{ctrl.tempr}}C" readonly>
+                </div>
+
+                 <div class="input-group" ng-model="ctrl.press">
+                    <span class="input-group-addon" id="basic-addon2" style="border-top-left-radius:15px; 
+                    border-bottom-color: deepskyblue; border-top-color :deepskyblue;
+                    border-left-color: deepskyblue;
+                     border-bottom-left-radius:15px"> <i class="fa fa-lg">P</i></span>
+                    <input type="text" class="form-control" style="border-top-right-radius:15px; border-bottom-right-radius:15px; 
+                    border-bottom-color: deepskyblue; border-top-color :deepskyblue;
+                    border-right-color: deepskyblue"  placeholder="" aria-describedby="basic-addon2" value="{{ctrl.press}}P" readonly>
+                </div>                
+                </div>
+            <div class="col-sm-5" ng-model="ctrl.weahterStatus">
+                <img src="images/rain-icon.png" 
+                ng-if="ctrl.weatherStatus == 1" class="img-rounded">
+                <img src="images/snow-icon.png" 
+                ng-if="ctrl.weatherStatus == 2" class="img-rounded">
+                <img src="images/sun-icon.png" 
+                ng-if="ctrl.weatherStatus == 3" class="img-rounded">
+                <img src="images/cloud-icon.png" 
+                ng-if="ctrl.weatherStatus == 0" class="img-rounded">
+            </div>
+        </div> 
+    </div>
+</div>
+</div>
